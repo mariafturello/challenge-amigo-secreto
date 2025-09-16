@@ -1,12 +1,27 @@
-# Amigo Secreto
+# 🎁 Challenge Amigo Secreto Maria Fernanda Turello
 
-Pequeña app para agregar nombres y sortear un "amigo secreto".
+Aplicación web simple que permite **agregar nombres de amigos** y realizar un **sorteo aleatorio** para determinar quién es el “amigo secreto”.
+Se realiza como parte del desafío Oracle Next Education (ONE)
 
-## Cómo usar
-1. Abre `index.html`.
-2. Escribe nombres y haz clic en "Añadir".
-3. Haz clic en "Sortear amigo".
+Incluye:
+- ✅ Agregar y eliminar amigos.
+- ✅ Validar entradas vacías y evitar duplicados.
+- ✅ Guardar lista y sorteos en `localStorage` (persistencia).
+- ✅ Mostrar historial de sorteos.
 
-## Desarrollo
-- `app.js` contiene la lógica principal.
-- `style.css` estilos básicos.
+
+## 📦 Tecnologías utilizadas
+
+- **HTML5**
+- **CSS3** (estilos personalizados y responsive)
+- **JavaScript vanilla** (sin frameworks)
+- **Git & GitHub** (control de versiones y despliegue)
+- **GitHub Pages** (hosting gratuito)
+
+---
+
+## 🛠 Instalación local
+
+1. Clona este repositorio:
+   ```bash
+   git clone [https://github.com/mariafturello/challenge-amigo-secreto.git]
