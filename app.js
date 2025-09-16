@@ -1,10 +1,12 @@
-// Challenge "Amigo Secreto"
+// app.js
+// "Challenge Amigo Secreto"
 
 'use strict';
 
 // Estado: array con los nombres de los amigos
 const amigos = [];
 
+// Referencias a elementos del DOM (coinciden con tu index.html)
 const inputNombre = document.getElementById('amigo');
 const listaAmigosEl = document.getElementById('listaAmigos');
 const resultadoEl = document.getElementById('resultado');
@@ -29,7 +31,6 @@ function renderLista() {
     btnEliminar.addEventListener('click', () => {
       amigos.splice(idx, 1); // removemos del array
       renderLista();
-
       // si la lista quedó vacía, limpiamos resultado
       if (amigos.length === 0) resultadoEl.innerHTML = '';
     });
@@ -51,12 +52,12 @@ function agregarAmigo() {
     return;
   }
 
-  // Evitar duplicados 
+  // evitar duplicados 
    if (amigos.includes(nombre)) {
-  alert('Ese nombre ya está en la lista.');
-  inputNombre.focus();
-    return;
-  }
+     alert('Ese nombre ya está en la lista.');
+     inputNombre.focus();
+     return;
+   }
 
   amigos.push(nombre);
   renderLista();
@@ -84,6 +85,11 @@ function sortearAmigo() {
   li.textContent = `🎉 El amigo secreto es: ${elegido} 🎉`;
   resultadoEl.appendChild(li);
 
+  // destacar el nombre seleccionado en la lista
+  const items = listaAmigosEl.querySelectorAll('.name-item');
+  items.forEach((it) => it.classList.remove('highlight'));
+  if (items[indiceAleatorio]) items[indiceAleatorio].classList.add('highlight');
+}
 
 // Habilitar "Enter" para añadir 
 inputNombre.addEventListener('keydown', (e) => {
@@ -96,4 +102,3 @@ inputNombre.addEventListener('keydown', (e) => {
 // Exponer funciones en window para que onclick en el HTML funcione
 window.agregarAmigo = agregarAmigo;
 window.sortearAmigo = sortearAmigo;
-
