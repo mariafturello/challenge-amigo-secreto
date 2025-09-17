@@ -161,3 +161,47 @@ ul {
     background-color: var(--color-button-hover);
 }
 
+/* Lista alineada */
+.name-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;            /* separación entre nombre y botón */
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.name-text {
+  flex: 1;              /* ocupa el espacio disponible */
+  text-align: left;     /* nombre alineado a la izquierda */
+  word-break: break-word;
+  padding-right: 8px;
+}
+
+/* Botón reiniciar  */
+.button-reset {
+  padding: 8px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+/*cambiar el estilo de highlight para que se vea claro */
+.highlight {
+  outline: 3px solid #60a5fa;
+  background: #eff8ff;
+}
+
+/* Mantener botón eliminar pequeño y consistente */
+.remove-button {
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+}

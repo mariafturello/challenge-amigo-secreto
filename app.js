@@ -3,39 +3,40 @@
 
 'use strict';
 
-// Estado: array con los nombres de los amigos
+// Estado
 const amigos = [];
 
-// Referencias a elementos del DOM (coinciden con tu index.html)
+// Referencias DOM
 const inputNombre = document.getElementById('amigo');
 const listaAmigosEl = document.getElementById('listaAmigos');
 const resultadoEl = document.getElementById('resultado');
 
-// --- RENDER: actualiza la lista visible en la página ---
+// --- RENDER: lista alineada con span y botón ---
 function renderLista() {
-  // limpiamos la lista
   listaAmigosEl.innerHTML = '';
 
-  // por cada amigo creamos un <li>
   amigos.forEach((nombre, idx) => {
     const li = document.createElement('li');
     li.className = 'name-item';
-    li.textContent = nombre;
 
-    // botón para eliminar (funcionalidad extra, útil para el test)
+    // span para el nombre (ayuda a alinear)
+    const spanNombre = document.createElement('span');
+    spanNombre.className = 'name-text';
+    spanNombre.textContent = nombre;
+    li.appendChild(spanNombre);
+
+    // botón eliminar
     const btnEliminar = document.createElement('button');
     btnEliminar.className = 'remove-button';
     btnEliminar.type = 'button';
     btnEliminar.setAttribute('aria-label', `Eliminar ${nombre}`);
     btnEliminar.textContent = 'Eliminar';
     btnEliminar.addEventListener('click', () => {
-      amigos.splice(idx, 1); // removemos del array
+      amigos.splice(idx, 1);
       renderLista();
-      // si la lista quedó vacía, limpiamos resultado
       if (amigos.length === 0) resultadoEl.innerHTML = '';
     });
 
-    li.appendChild(document.createTextNode(' ')); // pequeño espacio
     li.appendChild(btnEliminar);
     listaAmigosEl.appendChild(li);
   });
@@ -45,24 +46,15 @@ function renderLista() {
 function agregarAmigo() {
   const nombre = inputNombre.value.trim();
 
-  // Validación: campo vacío
   if (!nombre) {
     alert('Por favor ingresa un nombre válido.');
     inputNombre.focus();
     return;
   }
 
-  // evitar duplicados 
-   if (amigos.includes(nombre)) {
-     alert('Ese nombre ya está en la lista.');
-     inputNombre.focus();
-     return;
-   }
-
   amigos.push(nombre);
   renderLista();
 
-  // limpiar input y dejar el foco para agregar otro
   inputNombre.value = '';
   inputNombre.focus();
 }
@@ -78,20 +70,29 @@ function sortearAmigo() {
   const indiceAleatorio = Math.floor(Math.random() * amigos.length);
   const elegido = amigos[indiceAleatorio];
 
-  // Mostrar resultado 
   resultadoEl.innerHTML = '';
   const li = document.createElement('li');
   li.className = 'resultado-item';
   li.textContent = `🎉 El amigo secreto es: ${elegido} 🎉`;
   resultadoEl.appendChild(li);
 
-  // destacar el nombre seleccionado en la lista
+  // destacar en la lista
   const items = listaAmigosEl.querySelectorAll('.name-item');
   items.forEach((it) => it.classList.remove('highlight'));
   if (items[indiceAleatorio]) items[indiceAleatorio].classList.add('highlight');
 }
 
-// Habilitar "Enter" para añadir 
+// --- REINICIAR SORTEO (borra todo: lista, resultado y resaltados) ---
+function reiniciarSorteo() {
+  amigos.length = 0;         // vacía el array de participantes
+  listaAmigosEl.innerHTML = ''; // borra la lista en pantalla
+  resultadoEl.innerHTML = '';   // borra el resultado
+  inputNombre.value = '';       // limpia el input
+  inputNombre.focus();          // deja el cursor listo para escribir
+}
+
+
+// Enter para añadir
 inputNombre.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
@@ -99,6 +100,7 @@ inputNombre.addEventListener('keydown', (e) => {
   }
 });
 
-// Exponer funciones en window para que onclick en el HTML funcione
+// Exponer funciones para los botones inline en el HTML
 window.agregarAmigo = agregarAmigo;
 window.sortearAmigo = sortearAmigo;
+window.reiniciarSorteo = reiniciarSorteo;
