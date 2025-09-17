@@ -48,5 +48,32 @@ Incluye validación de entrada, visualización clara de la lista, posibilidad de
 ---
 
 ## 📂 Estructura del proyecto
+/ (root)
+├─ index.html # Estructura principal
+├─ app.js # Lógica de la aplicación
+├─ style.css # Estilos de la interfaz
+├─ assets/
+│ ├─ amigo-secreto.png
+│ ├─ play_circle_outline.png
+│ └─ screenshots/
+│ ├─ screenshot-01-home.png
+│ ├─ screenshot-02-lista.png
+│ ├─ screenshot-03-resultado.png
+│ └─ screenshot-04-reiniciar.png
+└─ README.md
 
+
+---
+
+## 💡 Ideas futuras
+
+- Guardar la lista en **localStorage** para no perder los nombres al recargar la página.  
+- Agregar animación al momento del sorteo.  
+- Exportar e importar listas en formato CSV.  
+
+---
+
+## 👩‍💻 Autor
+
+Desarrollado por **María Turello** como parte del challenge del curso Logica de programacion de Alura Latam. ✨
 
