@@ -22,11 +22,20 @@ Pequeña aplicación web creada como **challenge de curso**. Permite agregar nom
 
 ---
 
-## Capturas
+## Capturas de pantalla
+
+Pantalla inicial:
 ![Home](assets/screenshots/screenshot-01-home.png)
+
+Lista de amigos:
 ![Lista](assets/screenshots/screenshot-02-lista.png)
+
+Resultado del sorteo:
 ![Resultado](assets/screenshots/screenshot-03-resultado.png)
+
+Después de reiniciar:
 ![Reiniciar](assets/screenshots/screenshot-04-reiniciar.png)
+
 
 ---
 
