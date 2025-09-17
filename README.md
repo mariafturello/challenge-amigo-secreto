@@ -1,27 +1,45 @@
-# 🎁 Challenge Amigo Secreto Maria Fernanda Turello
+# Challenge: Amigo Secreto 🎁
 
-Aplicación web simple que permite **agregar nombres de amigos** y realizar un **sorteo aleatorio** para determinar quién es el “amigo secreto”.
-Se realiza como parte del desafío Oracle Next Education (ONE)
-
-Incluye:
-- ✅ Agregar y eliminar amigos.
-- ✅ Validar entradas vacías y evitar duplicados.
-- ✅ Guardar lista y sorteos en `localStorage` (persistencia).
-- ✅ Mostrar historial de sorteos.
-
-
-## 📦 Tecnologías utilizadas
-
-- **HTML5**
-- **CSS3** (estilos personalizados y responsive)
-- **JavaScript vanilla** (sin frameworks)
-- **Git & GitHub** (control de versiones y despliegue)
-- **GitHub Pages** (hosting gratuito)
+Pequeña aplicación web creada como **challenge de curso**. Permite agregar nombres de amigos, visualizar la lista y realizar un sorteo aleatorio para elegir el "amigo secreto".
 
 ---
 
-## 🛠 Instalación local
+## Demo (local)
+1. Cloná el repositorio o descargá los archivos.
+2. Abrí `index.html` en tu navegador (o serví la carpeta con `python -m http.server 8000`).
+3. Escribí un nombre y presioná **Añadir** (o Enter).
+4. Presioná **Sortear amigo** para obtener el resultado.
+5. Si querés sortear de nuevo, presioná **Reiniciar sorteo**.
 
-1. Clona este repositorio:
-   ```bash
-   git clone [https://github.com/mariafturello/challenge-amigo-secreto.git]
+---
+
+## Funcionalidades
+- Agregar nombres desde un campo de texto (valida campo vacío).
+- Listado visible con botón **Eliminar** por participante.
+- Sorteo aleatorio (resultado visible y nombre resaltado).
+- Botón **Reiniciar sorteo** para limpiar resultado y poder sortear de nuevo.
+- UX: presionar Enter añade el nombre.
+
+---
+
+## Capturas
+![Home](assets/screenshots/screenshot-01-home.png)
+![Lista](assets/screenshots/screenshot-02-lista.png)
+![Resultado](assets/screenshots/screenshot-03-resultado.png)
+![Reiniciar](assets/screenshots/screenshot-04-reiniciar.png)
+
+---
+
+## Estructura del proyecto
+/ (root)
+├─ index.html
+├─ app.js
+├─ style.css
+├─ assets/
+│ └─ screenshots/
+└─ README.md
+
+---
+
+## Autor
+María Fernanda Turello — . ✨
