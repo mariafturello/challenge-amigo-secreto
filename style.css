@@ -160,3 +160,6 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.highlight { outline: 3px solid #60a5fa; background: #eff8ff; }
+.remove-button { background: #fee2e2; border: none; border-radius:4px; padding:6px 8px; }
